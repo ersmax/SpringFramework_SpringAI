@@ -11,11 +11,14 @@ PS D:\Java\Udemy\JavaSpringFrameworkBootSpring\Projects\Spring\src> javac .\Sect
 ```
 
 To run the compiled class (run the bytecode or object code) from the source program folder:
+
 ```Java
-PS D:\Java\Udemy\JavaSpringFrameworkBootSpring\Projects\Spring\src\Section2_CoreJava\L8_CodeSetup> java -cp ../.. Section2_CoreJava.L8_CodeSetup.main
+import Section2_CoreJava.L8_CodeSetup.Main;
+
+PS D:\Java\Udemy\JavaSpringFrameworkBootSpring\Projects\Spring\src\Section2_CoreJava\L8_CodeSetup>java -cp ../..Main
 ```
 
 To run the compiled class from the main folder:
 ```Java
-PS D:\Java\Udemy\JavaSpringFrameworkBootSpring\Projects\Spring\src> java Section2_CoreJava.L8_CodeSetup.main 
+PS D:\Java\Udemy\JavaSpringFrameworkBootSpring\Projects\Spring\src> java Section2_CoreJava.L8_CodeSetup.Main 
 ```
