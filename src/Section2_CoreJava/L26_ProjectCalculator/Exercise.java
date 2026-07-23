@@ -10,7 +10,7 @@ public static void main(String[] args) {
         char operator = '+';
         String again = "y";
 
-        // TODO: Run the loop while 'again' equals 'y'
+        // Run the loop while 'again' equals 'y'
         while (again == "y") {
             double result = 0.0;
 
