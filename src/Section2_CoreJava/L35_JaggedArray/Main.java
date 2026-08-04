@@ -17,7 +17,8 @@ public class Main {
         // enhanced for loop
         for (int[] row : nums)
         {
-            for (int col : row) System.out.print(col + " ");
+            for (int col : row)
+                System.out.print(col + " ");
             System.out.println();
         }
     }
