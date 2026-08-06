@@ -2,15 +2,17 @@ package Section3_AdvancedJava.L72_InnerClass;
 
 class A {
 
-    int age;
+    private int age;
 
     public void show() {
         System.out.println("in show");
     }
 
     class B {
+        private int year;
+
         public void config() {
-            System.out.println("in config B");
+            System.out.println("in config B" + age);
         }
     }
 
