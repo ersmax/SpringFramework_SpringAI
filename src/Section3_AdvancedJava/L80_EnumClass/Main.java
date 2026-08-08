@@ -9,7 +9,8 @@ enum Laptop {
 
     private int price;
 
-    Laptop() {
+    // cannot have a public const. because all instances are the above constants
+    private Laptop() {
         price = 800;
         System.out.println("In default constructor: " + this.name());
     }
