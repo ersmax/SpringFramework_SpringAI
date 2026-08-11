@@ -20,7 +20,7 @@ public class Main {
             if (result == 0)
                 throw new NewException("We don't want 0 result");
         } catch (NewException e) {
-            System.out.println("New exception handled: " + e);
+            System.out.println("New exception handled: " + e.getMessage());
         } catch (ArithmeticException e) {
             System.out.println("Cannot divide by 0 " + e);
         } catch (Error e) {

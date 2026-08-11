@@ -19,7 +19,7 @@ class A {
     }
 
     public Class show() throws ClassNotFoundException {
-        return Class.forName("Main"); // forName loads the class
+        return Class.forName("Ciccio"); // forName loads the class
 //        try {
 //            Class.forName("Demo");
 //        } catch (ClassNotFoundException e) {
