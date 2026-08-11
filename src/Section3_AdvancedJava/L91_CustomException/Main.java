@@ -1,6 +1,6 @@
 package Section3_AdvancedJava.L91_CustomException;
 
-class NewException extends Exception {
+class NewException extends RuntimeException {
     public NewException() {
     }
 
