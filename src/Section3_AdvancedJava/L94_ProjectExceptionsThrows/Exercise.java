@@ -1,7 +1,7 @@
 package Section3_AdvancedJava.L94_ProjectExceptionsThrows;
 
 // Define custom exception InvalidAgeException extending Exception
-class InvalidAgeException extends Exception {
+class InvalidAgeException extends RuntimeException {
     public InvalidAgeException() {
     }
 
