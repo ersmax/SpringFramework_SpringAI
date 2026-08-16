@@ -1,6 +1,7 @@
 package Section3_AdvancedJava.L96_MultipleThreads;
 
 class A extends Thread {
+    @Override
     public void run() {
         for (int idx = 0; idx < 10; idx++)
             System.out.println("Hi");
@@ -8,6 +9,7 @@ class A extends Thread {
 }
 
 class B extends Thread {
+    @Override
     public void run() {
         for (int idx = 0; idx < 10; idx++)
             System.out.println("There");
