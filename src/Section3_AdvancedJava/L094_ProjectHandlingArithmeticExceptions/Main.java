@@ -1,4 +1,4 @@
-package Section3_AdvancedJava.L94_ProjectHandlingArithmeticExceptions;
+package Section3_AdvancedJava.L094_ProjectHandlingArithmeticExceptions;
 
 public class Main {
     public static void main(String[] args) {

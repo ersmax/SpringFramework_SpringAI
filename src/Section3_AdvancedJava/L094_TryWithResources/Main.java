@@ -1,4 +1,4 @@
-package Section3_AdvancedJava.L94_TryWithResources;
+package Section3_AdvancedJava.L094_TryWithResources;
 
 import java.io.BufferedReader;
 import java.io.IOException;
