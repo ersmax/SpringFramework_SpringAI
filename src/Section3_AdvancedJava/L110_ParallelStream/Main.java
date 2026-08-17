@@ -63,20 +63,29 @@ public class Main {
             return num * 2;
         };
 
-        startSeq = System.currentTimeMillis();
-        int sequentialSum = nums.stream()
-                                .map(function)
-                                .mapToInt(num -> num)
-                                .sum();
-        endSeq = System.currentTimeMillis();
-        System.out.println("Sequential mapToInt + sum + 1ms op: " + sequentialSum + " Tot time (ms): " + (endSeq - startSeq));
+//        startSeq = System.currentTimeMillis();
+//        int sequentialSum = nums.stream()
+//                                .map(function)
+//                                .mapToInt(num -> num)
+//                                .sum();
+//        endSeq = System.currentTimeMillis();
+//        System.out.println("Sequential mapToInt + sum + 1ms op: " + sequentialSum + " Tot time (ms): " + (endSeq - startSeq));
+//
+//        startSeq = System.currentTimeMillis();
+//        Stream<Integer> myStream = nums.parallelStream();
+//        int parallelSum = myStream.map(function)
+//                                  .mapToInt(num -> num)
+//                                  .sum();
+//        endSeq = System.currentTimeMillis();
+//        System.out.println("Parallel mapToInt + sum + 1ms op: " + sequentialSum + " Tot time (ms): " + (endSeq - startSeq));
 
-        startSeq = System.currentTimeMillis();
-        Stream<Integer> myStream = nums.parallelStream();
-        int parallelSum = myStream.map(function)
-                                  .mapToInt(num -> num)
-                                  .sum();
-        endSeq = System.currentTimeMillis();
-        System.out.println("Parallel mapToInt + sum + 1ms op: " + sequentialSum + " Tot time (ms): " + (endSeq - startSeq));
+        // Not thread safe and dangerous, because ArrayList is not thread safe
+        // Two threads could append simultaneously elements at elementData[size],
+        // with one element getting lost,
+        // and the update on size++ getting lost by one,
+        // since both threads read the same starting value before either one is finished
+        List<Integer> results = new ArrayList<>(); // shared mutable state
+        nums.parallelStream().forEach(num -> results.add(num * 2));
+        System.out.println(results);
     }
 }
