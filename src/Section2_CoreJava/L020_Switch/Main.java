@@ -1,4 +1,4 @@
-package Section2_CoreJava.L20_Switch;
+package Section2_CoreJava.L020_Switch;
 
 public class Main {
     public static void main(String[] args) {

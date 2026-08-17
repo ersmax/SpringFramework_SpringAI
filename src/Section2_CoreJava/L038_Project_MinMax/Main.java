@@ -1,4 +1,4 @@
-package Section2_CoreJava.L38_Project_MinMax;
+package Section2_CoreJava.L038_Project_MinMax;
 
 public class Main
 {

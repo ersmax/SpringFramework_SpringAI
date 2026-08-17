@@ -1,4 +1,4 @@
-package Section2_CoreJava.L16_Project_LogicalOperators;
+package Section2_CoreJava.L016_Project_LogicalOperators;
 
 public class Main {
     public static void main(String[] args){
