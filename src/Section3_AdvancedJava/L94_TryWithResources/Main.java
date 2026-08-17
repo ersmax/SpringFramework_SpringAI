@@ -1,7 +1,5 @@
 package Section3_AdvancedJava.L94_TryWithResources;
 
-import Section2_CoreJava.L59_AccessModifiers.other.B;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
