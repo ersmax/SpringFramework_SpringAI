@@ -1,6 +1,7 @@
 package Section3_AdvancedJava.L109_MapFilterReduceSorted;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.*;
 import java.util.stream.Stream;
@@ -82,7 +83,7 @@ public class Main {
         // Sort with a single thread
         Stream<Integer> sortedValues = nums.stream()
                                             .filter(num -> num  % 2 == 0)
-                                            .sorted();
+                                            .sorted(Comparator.reverseOrder());
         sortedValues.forEach(System.out::println);
 
         // Filter with multiple thread
