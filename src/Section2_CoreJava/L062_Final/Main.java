@@ -18,9 +18,11 @@ class AdvCalc extends Calc {
 
 public class Main {
     public static void main(String[] args) {
-        final int num = 0;
+        final int num;
+        {
+            num = 0;
+        }
         System.out.println(num);
-
         Calc obj = new AdvCalc();
         obj.show();
         obj.add(4, 5);
