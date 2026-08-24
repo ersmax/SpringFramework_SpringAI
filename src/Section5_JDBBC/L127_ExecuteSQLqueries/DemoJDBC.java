@@ -1,4 +1,4 @@
-package Section5_JDBBC.L127;
+package Section5_JDBBC.L127_ExecuteSQLqueries;
 
 // 1. Import package: JDBC-related classes
 import java.sql.*;
@@ -57,11 +57,13 @@ public class DemoJDBC {
             }
 
             resultSet = statement.executeQuery(sql2);
+            System.out.println("SID\tName\tMarks");
+            System.out.println("---\t----\t-----");
             while (resultSet.next()) {
-                System.out.print(resultSet.getInt("sid") + " - ");
-                System.out.print(resultSet.getString(2) + " - ");
-                System.out.print(resultSet.getInt("marks"));
-                System.out.println();
+                int sid = resultSet.getInt("sid");
+                String name = resultSet.getString(2);
+                int marks = resultSet.getInt("marks");
+                System.out.println(sid + "\t" + name + "\t" + marks);
             }
 
 
@@ -70,7 +72,7 @@ public class DemoJDBC {
         } catch (SQLException e) {
             throw new RuntimeException("Error with the Connection and SQL execution: " + e.getMessage());
         } catch (Exception e) {
-            e.getStackTrace();
+            e.printStackTrace();
             throw new RuntimeException("Some error: " + e.getMessage());
         }
         finally {
