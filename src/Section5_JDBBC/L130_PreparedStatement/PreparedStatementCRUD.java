@@ -80,19 +80,21 @@ public class PreparedStatementCRUD {
     // READ all students
     public static void getStudents() {
         String sql = "SELECT * FROM public.student ORDER BY sid ASC";
-        try (
-            // 4. Create Connection object from Java API to DBMS
-            Connection con = DriverManager.getConnection(URL, USER, PWD);
-            // 5. Create statement SQL object for query execution
-            PreparedStatement preparedStatement = con.prepareStatement(sql);
-            )
+        Connection con = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
-        {
+        try  {
+            // 4. Create Connection object from Java API to DBMS
+            con = DriverManager.getConnection(URL, USER, PWD);
+            // 5. Create statement SQL object for query execution
+            preparedStatement = con.prepareStatement(sql);
+
             System.out.println("Connection established. Initiate READ...");
             System.out.println("SQL prepared statement created");
 
             // 6. Execute query: fetch all data
-            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
@@ -101,10 +103,24 @@ public class PreparedStatementCRUD {
             }
         } catch (SQLException e) {
             System.out.println("Select error: " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null)  resultSet.close();
+                if (preparedStatement != null)  preparedStatement.close();
+                if (con != null && !con.isClosed()) con.close();
+                System.out.println("Connection and resources closed");
+            } catch (SQLException e) {
+                System.out.println("Error in closing resources: " + e.getMessage());
+            }
         }
     }
 
     // UPDATE
+
+    /**
+     * NOTE: kept in classic try/catch/finally style intentionally,
+     * to contrast with the try-with-resources methods above.
+     */
     public static void updateStudent(int sid, String newName, int newMarks) {
         String sql = "UPDATE public.student SET name = ?, marks = ? WHERE sid = ?";
         try (
