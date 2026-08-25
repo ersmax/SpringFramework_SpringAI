@@ -152,13 +152,7 @@ public class PreparedStatementCRUD {
         }
     }
 
-    public static void main() {
-        // Database connection parameters
-
-
-        Connection conn = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
+    public static void main(String[] args) {
 
         try {
             // 2 & 3 load and register the JDBC driver
@@ -171,12 +165,10 @@ public class PreparedStatementCRUD {
         // RETRIEVE query
         getStudents();
 
-        // CREATE
-        // Statement query parameters
+        // CREATE with Statement query parameters below
         int sid = 101;
         String name = "Jonnino";
         int marks = 98;
-
         insertStudentSafe(sid, name, marks);
         getStudents();
 
