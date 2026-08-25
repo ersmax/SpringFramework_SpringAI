@@ -66,6 +66,27 @@ public class PreparedStatementCRUD {
 
     // READ all students
     public static void getStudents() {
+        String sql = "SELECT * FROM public.student ORDER BY sid ASC";
+        try {
+            // 4. Create Connection object from Java API to DBMS
+            Connection con = DriverManager.getConnection(URL, USER, PWD);
+            System.out.println("Connection established. Initiate READ...");
+
+            // 5. Create statement SQL object for query execution
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            System.out.println("SQL prepared statement created");
+
+            // 6. Execute query: fetch all data
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                int marks = resultSet.getInt(3);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Select error: " + e.getMessage());
+        }
 
     }
 
