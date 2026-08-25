@@ -116,7 +116,6 @@ public class PreparedStatementCRUD {
     }
 
     // UPDATE
-
     /**
      * NOTE: kept in classic try/catch/finally style intentionally,
      * to contrast with the try-with-resources methods above.
