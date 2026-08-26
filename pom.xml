@@ -24,7 +24,7 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- Dependency for Hibernate Core ORM -->
+        <!-- Dependency for Hibernate Core ORM  -->
         <!-- Source: https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-processor -->
         <dependency>
             <groupId>org.hibernate.orm</groupId>
