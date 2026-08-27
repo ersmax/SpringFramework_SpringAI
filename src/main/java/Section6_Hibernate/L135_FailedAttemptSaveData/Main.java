@@ -11,8 +11,11 @@ public class Main {
         s1.setAge(10);
         s1.setRollNumber(1020);
 
-        // We need to specify in the configuration the
-        // username, pwd, server address and port of DBMS
+        // - We need to specify in the configuration the
+        //   username, pwd, server address and port of DBMS
+        // - The annotations for the class are missing
+        // - Missing mapping between Java class and db tables
+        // - Missing transaction management.
         Configuration configuration = new Configuration();
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
