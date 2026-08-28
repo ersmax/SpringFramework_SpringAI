@@ -37,11 +37,15 @@ public class Main {
         session.merge(stud);
         session.merge(newStud);
         transaction.commit();
-        session.close();
 
         // DELETE data
-        // TODO
+        Student student2 = session.find(Student.class, 10);
+        Transaction transaction2 = session.beginTransaction();
+        session.remove(student2);
+        transaction2.commit();
 
+
+        session.close();
         sessionFactory.close();
 
 
