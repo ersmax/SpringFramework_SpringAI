@@ -1,4 +1,4 @@
-package Section6_Hibernate.L138_StoreData;
+package Section6_Hibernate.L138_CreateData;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

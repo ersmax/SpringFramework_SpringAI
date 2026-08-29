@@ -1,0 +1,36 @@
+package Section6_Hibernate.L141_ChangingTableColNames;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // New Alien: it's added as new, if it is not identified by a primary key
+        // so it works as update tables of hibernate.cfg.xml
+        Alien newAlien = new Alien();
+        newAlien.setAname("Nathan");
+        newAlien.setAid(9);
+        newAlien.setTech("Java");
+
+        // - We use an XML config file for the configuration,
+        //   and we need to map the config to the class to use Hibernate on the class
+        Configuration configuration = new Configuration();
+        configuration.addAnnotatedClass(Alien.class);
+        configuration.configure();
+
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        // CREATE data
+        Transaction transaction = session.beginTransaction();
+        session.persist(newAlien);
+        transaction.commit();
+
+
+        session.close();
+        sessionFactory.close();
+    }
+}
