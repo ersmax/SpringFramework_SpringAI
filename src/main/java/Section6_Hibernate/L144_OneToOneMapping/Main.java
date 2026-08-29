@@ -1,0 +1,49 @@
+package Section6_Hibernate.L144_OneToOneMapping;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Laptop l1 = new Laptop();
+        l1.setLid(1);
+        l1.setBrand("Asus");
+        l1.setModel("ROG");
+        l1.setRam(16);
+
+        // New Alien: it's added as new, if it is not identified by a primary key
+        // so it works as update tables of hibernate.cfg.xml
+        Alien newAlien = new Alien();
+        newAlien.setAid(101);
+        newAlien.setAname("Nathan");
+        newAlien.setTech("Java");
+        newAlien.setLaptop(l1);
+
+        // - We use an XML config file for the configuration,
+        //   and we need to map the config to the class to use Hibernate on the class
+        Configuration configuration = new Configuration();
+        configuration.addAnnotatedClass(Laptop.class);
+        configuration.addAnnotatedClass(Alien.class);
+        configuration.configure();
+
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        // CREATE data
+        Transaction transaction = session.beginTransaction();
+        session.persist(l1);
+        session.persist(newAlien);
+        transaction.commit();
+        System.out.println("First transaction done");
+
+        // Fetch data
+        Alien a2 = session.find(Alien.class, 101);
+        System.out.println(a2);
+
+        session.close();
+        sessionFactory.close();
+    }
+}
