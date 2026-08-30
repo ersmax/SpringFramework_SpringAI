@@ -17,8 +17,8 @@ public class Main {
         //   and we need to map the config to the class to use Hibernate on the class
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(Student.class);
-
         configuration.configure();
+
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
 
@@ -28,7 +28,8 @@ public class Main {
         session.persist(s1);
         transaction.commit();
 
-
+        session.close();
+        sessionFactory.close();
 
         System.out.println(s1);
     }
