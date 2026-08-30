@@ -1,4 +1,4 @@
-package Section6_Hibernate.L145_OneToManyAThirdTableKeys;
+package Section6_Hibernate.L149_FetchingFilter;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

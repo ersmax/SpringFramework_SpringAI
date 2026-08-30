@@ -1,4 +1,4 @@
-package Section6_Hibernate.L145_OneToManyAThirdTableKeys;
+package Section6_Hibernate.L146_ManyToManyAJunctionTable;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,13 +22,36 @@ public class Main {
         l2.setModel("Legion");
         l2.setRam(32);
 
+        Laptop l3 = new Laptop();
+        l3.setLid(3);
+        l3.setBrand("Dell");
+        l3.setModel("XPS");
+        l3.setRam(24);
+
         // New Alien: it's added as new, if it is not identified by a primary key
         // so it works as update tables of hibernate.cfg.xml
-        Alien newAlien = new Alien();
-        newAlien.setAid(101);
-        newAlien.setAname("Nathan");
-        newAlien.setTech("Java");
-        newAlien.setLaptop(Arrays.asList(l1, l2));
+        Alien a1 = new Alien();
+        a1.setAid(101);
+        a1.setAname("Nathan");
+        a1.setTech("Java");
+
+        Alien a2 = new Alien();
+        a2.setAid(102);
+        a2.setAname("Kiran");
+        a2.setTech("C++");
+
+        Alien a3 = new Alien();
+        a3.setAid(103);
+        a3.setAname("Alex");
+        a3.setTech("C");
+
+        // Set ownership of the laptops
+        a1.setLaptop(Arrays.asList(l1, l2));
+        a2.setLaptop(Arrays.asList(l2, l3));
+        a3.setLaptop(Arrays.asList(l1));
+        l1.setAlien(Arrays.asList(a1, a3));
+        l2.setAlien(Arrays.asList(a1, a2));
+        l3.setAlien(Arrays.asList(a3));
 
         // - We use an XML config file for the configuration,
         //   and we need to map the config to the class to use Hibernate on the class
@@ -44,13 +67,16 @@ public class Main {
         Transaction transaction = session.beginTransaction();
         session.persist(l1);
         session.persist(l2);
-        session.persist(newAlien);
+        session.persist(l3);
+        session.persist(a1);
+        session.persist(a2);
+        session.persist(a3);
         transaction.commit();
         System.out.println("First transaction done");
 
         // Fetch data
-        Alien a2 = session.find(Alien.class, 101);
-        System.out.println(a2);
+        Alien alien = session.find(Alien.class, 101);
+        System.out.println(alien);
 
         session.close();
         sessionFactory.close();

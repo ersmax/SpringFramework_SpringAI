@@ -1,6 +1,7 @@
-package Section6_Hibernate.L145_OneToManyAThirdTableKeys;
+package Section6_Hibernate.L148_FetchingWithHQL;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -13,7 +14,7 @@ public class Alien {
     private int aid;
     private String aname;
     private String tech;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Laptop> laptops;
 
     public int getAid() {

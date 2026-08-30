@@ -1,7 +1,9 @@
-package Section6_Hibernate.L145_OneToManyAThirdTableKeys;
+package Section6_Hibernate.L147_LazyEagerValuation;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
+import java.util.List;
 
 @Entity
 public class Laptop {

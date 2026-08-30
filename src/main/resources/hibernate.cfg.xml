@@ -12,12 +12,12 @@
 
         <!-- Hibernate properties -->
         <!-- hibernate map to dll: create a table when you don't find one, or update with new schema if table is already there -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- inform the dialect used -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         
         <!-- Show and format the query in execution -->
         <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
+<!--        <property name="hibernate.format_sql">true</property>-->
     </session-factory>
 </hibernate-configuration>
