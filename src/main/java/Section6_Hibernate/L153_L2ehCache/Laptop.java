@@ -1,9 +1,11 @@
-package Section6_Hibernate.L149_FetchingFilter;
+package Section6_Hibernate.L153_L2ehCache;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
+@Cacheable
 public class Laptop {
 
     @Id

@@ -1,4 +1,4 @@
-package Section6_Hibernate.L149_FetchingFilter;
+package Section6_Hibernate.L152_GetVsLoad;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

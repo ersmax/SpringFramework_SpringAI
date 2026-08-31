@@ -1,4 +1,4 @@
-package Section6_Hibernate.L149_FetchingFilter;
+package Section6_Hibernate.L149_FetchingColumns;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,14 +25,20 @@ public class Main {
 
         // select * from laptop where brand LIKE 'Asus' -> SQL
         // from laptop where brand LIKE 'Asus' -> HQL
-        String brand = "Asus";
         int minRam = 32;
-        Query query = session.createQuery("from Laptop where ram >= ?1", Laptop.class);
+        Query query = session.createQuery("from Laptop where ram >= ?1");
         query.setParameter(1, minRam);
         List<Laptop> laptops = query.getResultList();
         System.out.println(laptops);
-
         System.out.println("First transaction done");
+
+        String companyName = "Asus";
+        Query query1 = session.createQuery("SELECT brand, model FROM Laptop WHERE brand LIKE ?1");
+        query1.setParameter(1, companyName);
+        List<Object[]> models = query1.getResultList();
+        for (Object[] model : models)
+            System.out.println((String)model[0] + " " + (String)model[1]);
+        System.out.println("Second transaction done");
 
 
         session.close();

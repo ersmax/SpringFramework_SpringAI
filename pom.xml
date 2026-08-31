@@ -14,6 +14,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- This is used to avoid Maven blocks http repositories -->
+            <!-- Source: https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>4.0.9</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <!-- Dependency for JDBC PostgreSQL Driver: Database driver for PostgreSQL connectivity -->
         <!-- Source: https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -30,6 +43,24 @@
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>7.4.6.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Standard Hibernate JCache implemented by EHCache and Caffeine -->
+        <!-- Source: https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-jcache -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-jcache</artifactId>
+            <version>7.4.6.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Dependency for L2 Cache -->
+        <!-- Source: https://mvnrepository.com/artifact/org.ehcache/ehcache -->
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>3.12.0</version>
             <scope>compile</scope>
         </dependency>
 

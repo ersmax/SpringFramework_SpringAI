@@ -19,5 +19,14 @@
         <!-- Show and format the query in execution -->
         <property name="hibernate.show_sql">true</property>
 <!--        <property name="hibernate.format_sql">true</property>-->
+        
+        <!-- Specify you use L2 cache -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <!-- Factory of JCache -->
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
+        <!-- Provider of L2 cache: Ehcache -->
+        <property name="hibernate.jakarta.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
+
     </session-factory>
 </hibernate-configuration>
