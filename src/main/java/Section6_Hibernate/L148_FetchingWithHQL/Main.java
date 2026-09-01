@@ -26,7 +26,7 @@ public class Main {
 
         // select * from laptop where ram = 32 -> SQL
         // from laptop where ram = 32; -> HQL
-        Query query = session.createQuery("from Laptop where ram >= 32", Laptop.class);
+        Query<Laptop> query = session.createQuery("from Laptop where ram >= 32", Laptop.class);
         List<Laptop> laptops = query.getResultList();
         System.out.println(laptops);
 

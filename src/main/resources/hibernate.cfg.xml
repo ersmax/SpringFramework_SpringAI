@@ -12,7 +12,7 @@
 
         <!-- Hibernate properties -->
         <!-- hibernate map to dll: create a table when you don't find one, or update with new schema if table is already there -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <!-- inform the dialect used -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         
