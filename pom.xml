@@ -8,7 +8,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>4.1.1</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>org.example</groupId>
@@ -19,6 +19,7 @@
         <maven.compiler.source>26</maven.compiler.source>
         <maven.compiler.target>26</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>26</java.version>
     </properties>
 
     <dependencyManagement>
@@ -72,13 +73,13 @@
         </dependency>
 
 
-        <!-- Dependency for Spring Boot Section 7 -->
+        <!-- Spring Boot Starter Web dependency Section 7 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Dependency for Spring Boot Section 7 -->
+        <!--  Spring Boot Starter Test for testing Section 7 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
