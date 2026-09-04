@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- This is the definition of a bean from the docs -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -6,6 +7,10 @@
 
     <!-- bean definitions here -->
     <bean id = "alien" class = "Section8_SpringFramework.L164_SpringXmlConfig.Alien">
+    </bean>
+    <bean id = "lap1" class = "Section8_SpringFramework.L165_ObjectCreation.Laptop">
+    </bean>
+    <bean id = "lap2" class = "Section8_SpringFramework.L165_ObjectCreation.Laptop">
     </bean>
 
 </beans>
