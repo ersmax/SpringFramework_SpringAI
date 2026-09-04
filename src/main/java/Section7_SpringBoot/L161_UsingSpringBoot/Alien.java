@@ -1,4 +1,4 @@
-package Section7_Spring.L162_Autowiring;
+package Section7_SpringBoot.L161_UsingSpringBoot;
 
 import org.springframework.stereotype.Component;
 

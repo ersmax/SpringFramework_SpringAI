@@ -1,4 +1,4 @@
-package Section7_Spring.L160_FirstSpringApp;
+package Section7_SpringBoot.L160_FirstSpringApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package Section7_Spring.L160_FirstSpringApp;
+package Section7_SpringBoot.L160_FirstSpringApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

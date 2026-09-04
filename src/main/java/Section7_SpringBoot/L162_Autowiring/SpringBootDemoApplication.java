@@ -1,4 +1,4 @@
-package Section7_Spring.L161_UsingSpringBoot;
+package Section7_SpringBoot.L162_Autowiring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,13 +9,11 @@ public class SpringBootDemoApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
 
-        Alien newAlien = new Alien();
-        newAlien.code();
+        Laptop lap = context.getBean(Laptop.class);
+        lap.compile();
 
-        Alien newAl = context.getBean(Alien.class);
-        newAl.code();
+        Alien alien = context.getBean(Alien.class);
+        alien.code();
 
-        Alien newAl2 = context.getBean(Alien.class);
-        newAl2.code();
     }
 }

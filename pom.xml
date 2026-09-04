@@ -87,6 +87,22 @@
         </dependency>
 
 
+        <!-- JUnit test for section 8 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Dependency for Spring Context framework Section 8 -->
+        <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>7.0.9</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
