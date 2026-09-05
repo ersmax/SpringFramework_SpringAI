@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id = "alien" class = "Section8_SpringFramework.L172_PrimaryBean.Alien" scope="singleton" autowire="byType">
+    <bean id = "alien" class = "Section8_SpringFramework.L173_LazyInitializationBean.Alien" scope="singleton">
         <!-- Constructor injection -->
         <!-- Use the type for differences-->
         <!-- <constructor-arg type="Section8_SpringFramework.L169_ConstructorInjection.Laptop" ref="laptop"/>-->
@@ -15,18 +15,18 @@
         <!-- <constructor-arg index="0" value="21"/>-->
         <!-- <constructor-arg index="1" ref="laptop"/>-->
         <!-- Use the name of the parameter -->
-<!--        <constructor-arg name="compConstructor" ref="comp"/>-->
-<!--        <constructor-arg name="ageConstructor" value="21"/>-->
+        <constructor-arg name="compConstructor" ref="desktop"/>
+        <constructor-arg name="ageConstructor" value="21"/>
 
         <!-- Setter Injection: inject value-->
-        <property name="age" value="21"/>
+<!--        <property name="age" value="21"/>-->
         <!-- Setter Injection: inject reference -->
-<!--        <property name="comp" ref="comput2"/>-->
+<!--        <property name="comp" ref="desktop"/>-->
     </bean>
 
-    <bean id = "comp" class = "Section8_SpringFramework.L172_PrimaryBean.Laptop" scope="singleton">
+    <bean id = "comp" class = "Section8_SpringFramework.L173_LazyInitializationBean.Laptop" scope="singleton">
     </bean>
-    <bean id = "comput2" class = "Section8_SpringFramework.L172_PrimaryBean.Desktop" scope="singleton" primary="true">
+    <bean id = "desktop" class = "Section8_SpringFramework.L173_LazyInitializationBean.Desktop" scope="singleton" lazy-init="true">
     </bean>
 
 </beans>
