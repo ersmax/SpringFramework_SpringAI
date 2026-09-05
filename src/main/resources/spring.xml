@@ -6,11 +6,27 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id = "alien" class = "Section8_SpringFramework.L164_SpringXmlConfig.Alien">
+    <bean id = "alien" class = "Section8_SpringFramework.L172_PrimaryBean.Alien" scope="singleton" autowire="byType">
+        <!-- Constructor injection -->
+        <!-- Use the type for differences-->
+        <!-- <constructor-arg type="Section8_SpringFramework.L169_ConstructorInjection.Laptop" ref="laptop"/>-->
+        <!-- <constructor-arg type="int" value="21"/>-->
+        <!-- Use the index number -->
+        <!-- <constructor-arg index="0" value="21"/>-->
+        <!-- <constructor-arg index="1" ref="laptop"/>-->
+        <!-- Use the name of the parameter -->
+<!--        <constructor-arg name="compConstructor" ref="comp"/>-->
+<!--        <constructor-arg name="ageConstructor" value="21"/>-->
+
+        <!-- Setter Injection: inject value-->
+        <property name="age" value="21"/>
+        <!-- Setter Injection: inject reference -->
+<!--        <property name="comp" ref="comput2"/>-->
     </bean>
-    <bean id = "lap1" class = "Section8_SpringFramework.L165_ObjectCreation.Laptop">
+
+    <bean id = "comp" class = "Section8_SpringFramework.L172_PrimaryBean.Laptop" scope="singleton">
     </bean>
-    <bean id = "lap2" class = "Section8_SpringFramework.L165_ObjectCreation.Laptop">
+    <bean id = "comput2" class = "Section8_SpringFramework.L172_PrimaryBean.Desktop" scope="singleton" primary="true">
     </bean>
 
 </beans>

@@ -1,4 +1,4 @@
-package Section8_SpringFramework.L164_SpringXmlConfig;
+package Section8_SpringFramework.L166_Scopes;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -7,11 +7,12 @@ public class Demo {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); // create container
-        Alien obj = (Alien) context.getBean("alien");
-        obj.code();
 
-        // This is equivalent of the Spring container code above
-        Alien alien = new Alien();
-        alien.code();
+        // Two different reference variables that reference same object "alien"
+        Alien obj1 = (Alien) context.getBean("alien");
+        Alien obj2 = (Alien) context.getBean("alien");
+        obj1.code();
+        obj2.code();
+
     }
 }
