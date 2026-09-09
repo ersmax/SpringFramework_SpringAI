@@ -1,12 +1,10 @@
-package Section9_JavaBasedConfig.L184_ScopeValueAnnotation;
+package Section10_SpringBoot.L186_Annotations;
 
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @Primary
-@Scope(value = "prototype")
 public class Desktop implements Computer {
 
     public Desktop() {
@@ -15,6 +13,6 @@ public class Desktop implements Computer {
 
     @Override
     public void compile() {
-        System.out.println("Compiling on desktop");
+        System.out.println("Compiling with Desktop");
     }
 }
