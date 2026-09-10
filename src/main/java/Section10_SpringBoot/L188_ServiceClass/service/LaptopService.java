@@ -1,6 +1,7 @@
 package Section10_SpringBoot.L188_ServiceClass.service;
 
 import Section10_SpringBoot.L188_ServiceClass.model.Laptop;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
