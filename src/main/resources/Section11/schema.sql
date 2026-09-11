@@ -1,6 +1,6 @@
 CREATE TABLE student
 (
-    rollno INT PRIMARY KEY,
+    roll INT PRIMARY KEY,
     name   VARCHAR(50),
     marks  int
 );

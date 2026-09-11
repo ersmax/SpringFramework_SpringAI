@@ -27,7 +27,7 @@ public class StudentRepository {
     }
 
     public void save(Student stud) {
-        String sql = "INSERT INTO student (rollno, name, marks) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO student (roll, name, marks) VALUES (?, ?, ?)";
         int rows = jdbc.update(sql, stud.getRollNo(), stud.getName(), stud.getMarks());
         System.out.println("Students added: " + rows);
     }

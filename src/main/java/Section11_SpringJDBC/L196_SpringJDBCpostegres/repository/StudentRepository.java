@@ -1,0 +1,59 @@
+package Section11_SpringJDBC.L196_SpringJDBCpostegres.repository;
+
+
+import Section11_SpringJDBC.L196_SpringJDBCpostegres.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+/**
+ * Repo layer
+ */
+@Repository
+public class StudentRepository {
+
+    private JdbcTemplate jdbc;
+
+    public JdbcTemplate getJdbc() {
+        return jdbc;
+    }
+
+    @Autowired
+    public void setJdbc(JdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
+
+    public void save(Student stud) {
+        String sql = "INSERT INTO student (roll, name, marks) VALUES (?, ?, ?)";
+        int rows = jdbc.update(sql, stud.getRollNo(), stud.getName(), stud.getMarks());
+        System.out.println("Students added: " + rows);
+    }
+
+    public List<Student> findAll() {
+        String sql = "SELECT * FROM student";
+        RowMapper<Student> mapper = (rs, rowNum) -> {
+            Student stud = new Student();
+            stud.setRollNo(rs.getInt("roll"));
+            stud.setName(rs.getString("name"));
+            stud.setMarks(rs.getInt("marks"));
+            return stud;
+        };
+        return jdbc.query(sql, mapper);
+    }
+    //        RowMapper<Student> mapper = new RowMapper<Student>() {
+    //            @Override
+    //            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+    //                Student stud = new Student();
+    //                stud.setRollNo(rs.getInt("roll"));
+    //                stud.setName(rs.getString("name"));
+    //                stud.setMarks(rs.getInt("marks"));
+    //
+    //                return stud;
+    //            }
+    //        };
+    //        return jdbc.query(sql, mapper);
+    //    }
+}
