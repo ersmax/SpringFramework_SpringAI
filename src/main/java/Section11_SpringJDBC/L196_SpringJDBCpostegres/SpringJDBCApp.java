@@ -29,10 +29,13 @@ public class SpringJDBCApp {
         stud2.setMarks(99);
 
         StudentService studService = context.getBean(StudentService.class);
-        studService.addStudent(stud);
-        studService.addStudent(stud2);
+//        studService.addStudent(stud);
+//        studService.addStudent(stud2);
 
         List<Student> students = studService.getStudents();
         System.out.println(students);
+
+        Student student101 = studService.getStudent(101);
+        System.out.println(student101);
     }
 }

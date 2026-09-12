@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -56,4 +58,16 @@ public class StudentRepository {
     //        };
     //        return jdbc.query(sql, mapper);
     //    }
+
+    public Student findStudent(int idStud) {
+        String sql = "SELECT * FROM student WHERE roll = ?";
+        RowMapper<Student> mapper = (ResultSet rs, int rowNum) -> {
+            Student stud = new Student();
+            stud.setRollNo(rs.getInt("roll"));
+            stud.setName(rs.getString("name"));
+            stud.setMarks(rs.getInt("marks"));
+            return stud;
+        };
+        return jdbc.queryForObject(sql, mapper, idStud);
+    }
 }
