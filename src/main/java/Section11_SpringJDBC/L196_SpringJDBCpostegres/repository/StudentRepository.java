@@ -61,7 +61,7 @@ public class StudentRepository {
 
     public Student findStudent(int idStud) {
         String sql = "SELECT * FROM student WHERE roll = ?";
-        RowMapper<Student> mapper = (ResultSet rs, int rowNum) -> {
+        RowMapper<Student> mapper = (rs, rowNum) -> {
             Student stud = new Student();
             stud.setRollNo(rs.getInt("roll"));
             stud.setName(rs.getString("name"));
@@ -70,4 +70,19 @@ public class StudentRepository {
         };
         return jdbc.queryForObject(sql, mapper, idStud);
     }
+
+//    public Student findStudent(int idStud) {
+//        String sql = "SELECT * FROM student WHERE roll = ?";
+//        RowMapper<Student> mapper = new RowMapper<Student>() {
+//            @Override
+//            public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+//                Student stud = new Student();
+//                stud.setRollNo(rs.getInt("roll"));
+//                stud.setName(rs.getString("name"));
+//                stud.setMarks(rs.getInt("marks"));
+//                return stud;
+//            }
+//        };
+//        return jdbc.queryForObject(sql, mapper, idStud);
+//    }
 }
