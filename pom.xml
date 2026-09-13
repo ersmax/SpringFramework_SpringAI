@@ -135,6 +135,23 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Dependencies for Section 12 Spring Boot Web       -->
+        <!-- Servlet API: Jakarta Servlet API       -->
+        <!-- Source: https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Tomcat Embed Core       -->
+        <!-- Source: https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>11.0.25</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
