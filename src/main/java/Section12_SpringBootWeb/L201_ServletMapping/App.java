@@ -16,7 +16,7 @@ public class App {
 
         Context context = tomcat.addContext("", null);
         Tomcat.addServlet(context, "HelloServlet", new HelloServlet());
-        context.addServletMapping("/hello", "HelloServlet");
+        context.addServletMappingDecoded("/hello", "HelloServlet");
 
         tomcat.getService().addConnector(connector);
 //        tomcat.getConnector().setPort(8080);
