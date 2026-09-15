@@ -173,6 +173,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- Dependency for Section 12: Thymeleaf       -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- Plugins for Spring Boot Section 7 -->

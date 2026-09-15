@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org"> <!-- add support for Thymeleaf -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="Section12/style.css">
+    </head>
+    <body>
+        <!--<h2>Result is: <%= session.getAttribute("result") %></h2>-->
+        <h2>List of aliens</h2>
+        <p th:text="${alien}"> ${alien} </p>
+        <p th:text="'Welcome to the ' + ${course} + ' World'"> Greeting </p>
+    </body>
+</html>
