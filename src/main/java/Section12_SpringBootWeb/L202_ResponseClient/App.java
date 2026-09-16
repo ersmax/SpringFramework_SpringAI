@@ -15,6 +15,7 @@ public class App {
         Tomcat tomcat = new Tomcat();
 
         Context context = tomcat.addContext("", null);
+
         Tomcat.addServlet(context, "HelloServlet", new HelloServlet());
         context.addServletMappingDecoded("/hello", "HelloServlet");
 

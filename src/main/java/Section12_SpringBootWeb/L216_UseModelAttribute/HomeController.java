@@ -1,6 +1,8 @@
 package Section12_SpringBootWeb.L216_UseModelAttribute;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,5 +33,33 @@ public class HomeController {
     @ModelAttribute("course")
     public String courseName() {
         return "Java";
+    }
+
+//    @RequestMapping("/addAlien")
+//    public String addAlien(@RequestParam("aname") String name, @RequestParam("aid") int id, Model model) {
+//        Alien alien = new Alien();
+//        alien.setAid(id);
+//        alien.setAname(name);
+//        model.addAttribute("alien", alien);
+//        return "showAlienAndCourse";
+//    }
+
+//    @RequestMapping("addAlien")
+//    public ModelAndView addAlien(@RequestParam("aname") String name, @RequestParam("aid") int id, ModelAndView modelView) {
+//        Alien alien = new Alien();
+//        alien.setAname(name);
+//        alien.setAid(id);
+//        modelView.addObject("alien", alien);
+//        modelView.setViewName("showAlienAndCourse");
+//        return modelView;
+//    }
+
+    @Controller
+    public class WelcomeController {
+        @GetMapping("/welcome")
+        public String welcome(Model model) {
+            model.addAttribute("message", "Welcome to Telusko!");
+            return "welcome-page";
+        }
     }
 }
