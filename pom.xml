@@ -179,6 +179,17 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
+
+        <!-- Dependency for Section 13: Spring MVC  -->
+        <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <!-- Spring Web MVC       -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>7.0.9</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <!-- Plugins for Spring Boot Section 7 -->
