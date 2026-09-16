@@ -3,6 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
+    
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -14,12 +16,13 @@
     <groupId>org.example</groupId>
     <artifactId>untitled</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.source>26</maven.compiler.source>
-        <maven.compiler.target>26</maven.compiler.target>	
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>	
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>26</java.version>
+        <java.version>21</java.version>
     </properties>
 
     <dependencyManagement>
@@ -150,7 +153,7 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
             <version>11.0.24</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Dependencies for Section 12 Spring Boot Web app -->
@@ -170,7 +173,7 @@
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jasper</artifactId>
             <version>11.0.24</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Dependency for Section 12: Thymeleaf       -->
