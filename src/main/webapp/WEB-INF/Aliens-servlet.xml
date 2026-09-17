@@ -17,5 +17,8 @@
 
 <ctx:component-scan base-package="Section13_SpringMVC.L219_MVCproject"/>
 <ctx:annotation-config/>
-
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/Section13/views/"/>
+	<property name="suffix" value=".jsp"/>
+</bean>
 </beans>                           
