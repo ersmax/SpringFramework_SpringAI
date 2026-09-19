@@ -177,10 +177,10 @@
         </dependency>
 
         <!-- Dependency for Section 12: Thymeleaf       -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+<!--        </dependency>-->
 
 
         <!-- Dependency for Section 13: Spring MVC  -->
@@ -192,6 +192,55 @@
             <version>7.0.9</version>
             <scope>compile</scope>
         </dependency>
+
+
+        <!-- Dependency for Section 14: Job Posting WebApp        -->
+        <!-- Spring Boot Starter Web MVC      -->
+        <!-- Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webmvc -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+            <version>4.1.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Lombok to reduce n of lines       -->
+        <!-- Source: https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.48</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Jakarta JSTL Api-->
+        <!-- Source: https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>3.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Jakarta JSTL Libray       -->
+        <!-- Source: https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Jasper: Translate JSP into servlet       -->
+        <!-- Source: https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>11.0.26</version>
+            <scope>compile</scope>
+        </dependency>
+
+
 
     </dependencies>
 
