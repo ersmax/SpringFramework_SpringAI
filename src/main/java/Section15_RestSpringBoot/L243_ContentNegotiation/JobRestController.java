@@ -11,20 +11,21 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class JobRestController {
 
+
     @Autowired
     private JobService jobService;
 
-    @GetMapping(path = "/jobPosts", produces = {"application/json"})
+    @GetMapping(path = "/jobPosts", produces = {"application/xml"})
     public List<JobPost> viewJobs() {
         return jobService.getAllJobs();
     }
 
-    @GetMapping("/jobPost/{postId}")
+    @GetMapping(path = "/jobPost/{postId}", produces = {"application/xml"})
     public JobPost getJob(@PathVariable("postId") int id) {
         return jobService.getJob(id);
     }
 
-    @PostMapping(path = "/jobPost", consumes = {"application/json"})
+    @PostMapping(path = "/jobPost", consumes = {"application/xml"})
     public JobPost addJob(@RequestBody JobPost jobPost) {
         jobService.addJob(jobPost);
         return jobService.getJob(jobPost.getPostId());
