@@ -1,4 +1,4 @@
-package Section16_SpringDataJPA.L245_CreateTableInsertData.model;
+package Section16_SpringDataJPA.L246_FindAll.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

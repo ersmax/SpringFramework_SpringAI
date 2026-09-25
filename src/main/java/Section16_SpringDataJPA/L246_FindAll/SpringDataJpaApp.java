@@ -1,6 +1,6 @@
-package Section16_SpringDataJPA.L245_CreateTableInsertData;
+package Section16_SpringDataJPA.L246_FindAll;
 
-import Section16_SpringDataJPA.L245_CreateTableInsertData.model.Student;
+import Section16_SpringDataJPA.L246_FindAll.model.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -9,11 +9,9 @@ import org.springframework.context.ApplicationContext;
 public class SpringDataJpaApp {
 
     public static void main(String[] args) {
-        System.out.println("started");
         // create an IoC container of objects
         ApplicationContext context = SpringApplication.run(SpringDataJpaApp.class, args);
         // beans are created with run()
-        System.out.println("IoC container created");
         Student s1 = context.getBean(Student.class);
         Student s2 = context.getBean(Student.class);
         Student s3 = context.getBean(Student.class);
@@ -22,15 +20,22 @@ public class SpringDataJpaApp {
         s1.setName("Quick");
         s1.setMarks(100);
 
-//        s2.setRollNo(102);
-//        s2.setName("Quock");
-//        s2.setMarks(98);
-//
-//        s3.setRollNo(103);
-//        s3.setName("Quack");
-//        s3.setMarks(87);
+        s2.setRollNo(102);
+        s2.setName("Quock");
+        s2.setMarks(98);
+
+        s3.setRollNo(103);
+        s3.setName("Quack");
+        s3.setMarks(87);
 
         StudentRepo repo = context.getBean(StudentRepo.class);
-        repo.save(s1);  // works if Student has annotation @Entity
+        // works if Student has annotation @Entity
+        // and application.properties has the config of creating/updating the tables
+        repo.save(s1);
+        repo.save(s2);
+        repo.save(s3);
+
+        // Fetch all records
+        System.out.println(repo.findAll());
     }
 }
