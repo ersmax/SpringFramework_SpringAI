@@ -287,7 +287,7 @@
 <!--            <scope>compile</scope>-->
 <!--        </dependency>-->
 
-        <!-- Dependency for the Project in Section 16       -->
+        <!-- Dependency for the Project in Section 16 (also JobApp)      -->
         <!-- Spring data jpa       -->
         <!-- Source: https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
         <dependency>
