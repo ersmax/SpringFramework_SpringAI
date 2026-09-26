@@ -1,6 +1,6 @@
-package Section16_SpringDataJPA.L247_FindById;
+package Section16_SpringDataJPA.L249_UpdateDelete;
 
-import Section16_SpringDataJPA.L247_FindById.model.Student;
+import Section16_SpringDataJPA.L249_UpdateDelete.model.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -53,5 +53,24 @@ public class SpringDataJpaApp {
         Optional<Student> stud = repo.findById(104);
         System.out.println(stud.orElse(new Student()));
 
+        // Fetch data based on an object attribute
+        System.out.println(repo.findByName("Quick"));
+
+        // Fetch data based on marks
+        System.out.println(repo.findByMarks(17));
+
+        // Fetch data based on marks
+        System.out.println(repo.findByMarksGreaterThan(80));
+
+
+        // update data for Quick: he cheated
+        Student quick = repo.findByName("Quick").getFirst();
+        quick.setMarks(0);
+        repo.save(quick);
+        System.out.println(repo.findAll());
+
+        // delete Quick once and for good
+        repo.delete(quick);
+        System.out.println(repo.findAll());
     }
 }
