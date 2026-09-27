@@ -17,6 +17,8 @@ import java.util.List;
 public interface JobRepo extends JpaRepository<JobPost, Integer> {
     @Query("SELECT COALESCE(MAX(job.postId), 0) FROM JobPost job")
     int findMaxPostId();
+
+    List<JobPost> findByPostProfileContainingOrPostDescContaining(String postProfile, String postDesc);
 }
 /*
 private List<JobPost> jobs = new ArrayList<>(Arrays.asList(
