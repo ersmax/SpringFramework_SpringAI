@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "postProfile": "Java Developer",
+      "postDesc": "should be good",
+      "reqExperience": 5,
+      "postTechStack": [
+        "Java",
+        "Js",
+        "Ts"
+      ]
+    },
+    {
+      "id": "2",
+      "postProfile": "Ts Developer",
+      "postDesc": "should be good",
+      "reqExperience": 5,
+      "postTechStack": [
+        "Java",
+        "Js",
+        "Ts"
+      ]
+    },
+    {
+      "id": "3",
+      "postProfile": "Js Developer",
+      "postDesc": "should be good",
+      "reqExperience": 5,
+      "postTechStack": [
+        "Java",
+        "Js",
+        "Ts"
+      ]
+    },
+    {
+      "postProfile": "C++ Developer",
+      "postDesc": "we are looking for a C++ dev",
+      "reqExperience": 10,
+      "postTechStack": [
+        "C++",
+        "C",
+        ".NET"
+      ],
+      "id": "Rli2jYHsEKo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
